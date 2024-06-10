@@ -1,0 +1,47 @@
+Exercise 1: Grade Evaluation
+Write a Java program that takes a student's score as input and prints their grade based on the following grading system:
+
+90-100: A
+80-89: B
+70-79: C
+60-69: D
+Below 60: F
+
+Exercise 2: Leap Year Checker
+Write a Java program that checks if a given year is a leap year or not. A leap year is divisible by 4, except for years divisible by 100 but not divisible by 400.
+Exercise 3: Largest Number
+Write a Java program that takes three numbers as input and prints the largest of the three numbers.
+Exercise 4: Positive or Negative Number
+Write a Java program that takes an integer as input and checks if it's a positive, negative, or zero.
+Exercise 1: Print Numbers
+Write a Java program to print numbers from 1 to 10 using a for loop.
+Exercise 2: Sum of Natural Numbers
+Write a Java program to calculate the sum of natural numbers from 1 to n, where n is provided by the user.
+Exercise 3: Factorial Calculation
+Write a Java program to calculate the factorial of a number n, where n is provided by the user.
+Exercise 4: Print Even Numbers
+Write a Java program to print even numbers from 2 to 20 using a while loop.
+Exercise 5: Fibonacci Sequence
+Write a Java program to generate and print the Fibonacci sequence up to a specified number of terms. The Fibonacci sequence starts with 0 and 1, and each subsequent term is the sum of the two preceding terms.
+
+Exercise 1: Day of the Week
+Write a Java program that takes an integer representing a day of the week (1 for Sunday, 2 for Monday, etc.) and prints the corresponding day's name.
+Exercise 2: Calculator
+Write a Java program that takes two numbers and an operator (+, -, *, /) as input and performs the corresponding operation using a switch statement.
+Exercise 3: Season Determiner
+Write a Java program that takes a month number (1-12) as input and uses a switch statement to determine and print the season (Spring, Summer, Fall, Winter) for that month.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
