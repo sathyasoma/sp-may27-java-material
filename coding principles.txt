@@ -1,0 +1,132 @@
+
+coding principles:
+=================
+
+*In Java, the design principles are the set of advice used as rules in design making
+
+*the design principles are similar to the design patterns concept.
+       
+	    The main difference of design principles and design patterns
+		
+		* more generalized and abstract
+		
+		*more practical advice and concrete. (design patterns)
+		
+
+the most important design principles:
+-------------------------------------
+1.SRP
+
+2. LSP
+
+3. ISP
+
+4.OPEN/CLOSED PRINCIPLES
+
+5.DIP
+
+
+
+Other principles:
+=================
+
+6.Dry principles
+
+7.KISS Principles
+
+8.Composistion
+
+
+Dry principles:
+===============
+
+The DRY principle stands for the Don't Repeat Yourself principle. 
+It is one of the common principles for all programming languages.
+
+eg:
+===
+
+public class Animal {  
+    public void eatFood() {  
+        System.out.println("Eat Food");  
+    }  
+}  
+  
+public class Dog extends Animal {  
+    public void woof() {  
+        System.out.println("Dog Woof! ");  
+    }  
+}  
+public class Cat extends Animal {  
+    public void meow() {  
+        System.out.println("Cat Meow!");  
+    }  
+}  
+
+
+*Both Dog and Cat speak differently, but they need to eat food. 
+
+*The common functionality in both of them is Eating food so, we can put this common functionality 
+into the parent class, i.e., Animals, and then we can extend that parent class in the child class,
+i.e., Dog and Cat.
+
+
+**Now, each class can focus on its own unique logic, so there is no need to implement
+the same functionality in both classes.
+
+Dog obj1 = new Dog();  
+obj1.eatFood();  
+obj1.woof();  
+  
+Cat obj2 = new Cat();  
+obj2.eatFood();  
+obj2.meow();  
+
+
+After compile and run the above code, we will see the following output:
+
+
+
+SRP:
+====
+SINGLE RESPONSIBLITY PRINCIPLES
+
+
+The SRP says that in one class,there should never two functionalities.
+
+*The class should only have one and only one reason to be changed. 
+*When there is more than one responsibility, there is more than one reason to change that
+class at the same point. So, there should not be more than one separate functionality in that
+same class that may be affected.
+
+
+The SRP principle helps us to:
+---
+
+*Inherit from a class without inheriting or implementing the methods which our class doesn't need.
+*Deal with bugs.
+*Implement changes without confusing co-dependencies.
+
+
+exa:
+----
+
+class Employee{
+
+  public pay calculatePay(){.....}
+  public void save(){....}
+  public String describeEmployee(){.....}
+
+}
+
+
+*Here we have pay calculation logic with database logic and reporting logic all mixed up 
+within one class. If you have multiple responsibilities combined into one class, it might be 
+difficult to change one part without breaking others.
+
+*Mixing responsibilities also makes the class harder to understand and harder to test, 
+decreasing cohesion. The easiest way to fix this is to split the class into three different 
+classes, with each having only one responsibility: database access, calculating pay, and reporting,
+all separated.
+
+
