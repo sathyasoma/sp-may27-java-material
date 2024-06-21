@@ -1,0 +1,519 @@
+Exercise 1: Student Class
+Create a Student class with the following properties: name, age, and studentId. Implement a constructor to initialize these properties and a method displayInfo() to display the student's information.
+
+Solution:
+
+java
+Copy code
+class Student {
+    private String name;
+    private int age;
+    private String studentId;
+
+    public Student(String name, int age, String studentId) {
+        this.name = name;
+        this.age = age;
+        this.studentId = studentId;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Student ID: " + studentId);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student("Alice", 20, "12345");
+        student.displayInfo();
+    }
+}
+Exercise 2: Book Class
+Create a Book class with the following properties: title, author, isbn, and price. Implement a constructor to initialize these properties and a method displayInfo() to display the book's information.
+
+Solution:
+
+java
+Copy code
+class Book {
+    private String title;
+    private String author;
+    private String isbn;
+    private double price;
+
+    public Book(String title, String author, String isbn, double price) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.price = price;
+    }
+
+    public void displayInfo() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Price: $" + price);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Book book = new Book("The Catcher in the Rye", "J.D. Salinger", "978-0-316-76948-0", 12.99);
+        book.displayInfo();
+    }
+}
+Exercise 3: Employee Class
+Create an Employee class with the following properties: name, employeeId, salary. Implement a parameterized constructor to initialize these properties and a method displayInfo() to display the employee's information.
+
+Solution:
+
+java
+Copy code
+class Employee {
+    private String name;
+    private int employeeId;
+    private double salary;
+
+    public Employee(String name, int employeeId, double salary) {
+        this.name = name;
+        this.employeeId = employeeId;
+        this.salary = salary;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Salary: $" + salary);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee employee = new Employee("John Doe", 101, 50000.0);
+        employee.displayInfo();
+    }
+}
+
+
+Exercise 4: Bank Account Class
+Create a BankAccount class with the following properties: accountNumber, accountHolder, and balance. Implement a constructor to initialize these properties and a method displayAccountInfo() to display the account's information.
+
+Solution:
+
+java
+Copy code
+class BankAccount {
+    private String accountNumber;
+    private String accountHolder;
+    private double balance;
+
+    public BankAccount(String accountNumber, String accountHolder, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    public void displayAccountInfo() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Balance: $" + balance);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("12345", "Alice Smith", 1000.0);
+        account.displayAccountInfo();
+    }
+}
+Exercise 5: Product Class
+Create a Product class with the following properties: productId, productName, and price. Implement a constructor to initialize these properties and a method displayProductInfo() to display the product's information.
+
+Solution:
+
+java
+Copy code
+class Product {
+    private int productId;
+    private String productName;
+    private double price;
+
+    public Product(int productId, String productName, double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+    }
+
+    public void displayProductInfo() {
+        System.out.println("Product ID: " + productId);
+        System.out.println("Product Name: " + productName);
+        System.out.println("Price: $" + price);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Product product = new Product(101, "Laptop", 799.99);
+        product.displayProductInfo();
+    }
+}
+Exercise 6: Customer Class
+Create a Customer class with the following properties: customerId, firstName, lastName, and email. Implement a constructor to initialize these properties and a method displayCustomerInfo() to display the customer's information.
+
+Solution:
+
+java
+Copy code
+class Customer {
+    private int customerId;
+    private String firstName;
+    private String lastName;
+    private String email;
+
+    public Customer(int customerId, String firstName, String lastName, String email) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    public void displayCustomerInfo() {
+        System.out.println("Customer ID: " + customerId);
+        System.out.println("Name: " + firstName + " " + lastName);
+        System.out.println("Email: " + email);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Customer customer = new Customer(1001, "John", "Doe", "johndoe@example.com");
+        customer.displayCustomerInfo();
+    }
+}
+
+
+
+Exercise 9: Course Class
+Create a Course class with properties courseCode, courseName, instructor, and creditHours. Implement a constructor to initialize these properties and a method displayCourseInfo() to display the course information.
+
+Solution:
+
+java
+Copy code
+class Course {
+    private String courseCode;
+    private String courseName;
+    private String instructor;
+    private int creditHours;
+
+    public Course(String courseCode, String courseName, String instructor, int creditHours) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.instructor = instructor;
+        this.creditHours = creditHours;
+    }
+
+    public void displayCourseInfo() {
+        System.out.println("Course Code: " + courseCode);
+        System.out.println("Course Name: " + courseName);
+        System.out.println("Instructor: " + instructor);
+        System.out.println("Credit Hours: " + creditHours);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Course course = new Course("CS101", "Introduction to Programming", "Prof. Johnson", 3);
+        course.displayCourseInfo();
+    }
+}
+
+
+Exercise 10: Product Inventory
+Create a Product class to represent a product in an inventory system with properties productId, productName, quantity, and price. Implement a constructor to initialize these properties and a method displayProductInfo() to display the product's information.
+
+Additionally, create a ProductInventory class that maintains an inventory of products. It should include methods to:
+
+Add a product to the inventory.
+Remove a product from the inventory.
+Display the information of all products in the inventory.
+Solution:
+
+java
+Copy code
+class Product {
+    private int productId;
+    private String productName;
+    private int quantity;
+    private double price;
+
+    public Product(int productId, String productName, int quantity, double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public void displayProductInfo() {
+        System.out.println("Product ID: " + productId);
+        System.out.println("Product Name: " + productName);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Price: $" + price);
+    }
+}
+
+class ProductInventory {
+    private Product[] products;
+    private int itemCount;
+
+    public ProductInventory(int capacity) {
+        products = new Product[capacity];
+        itemCount = 0;
+    }
+
+    public void addProduct(Product product) {
+        if (itemCount < products.length) {
+            products[itemCount] = product;
+            itemCount++;
+            System.out.println("Product added to inventory.");
+        } else {
+            System.out.println("Inventory is full. Cannot add more products.");
+        }
+    }
+
+    public void removeProduct(int productId) {
+        for (int i = 0; i < itemCount; i++) {
+            if (products[i] != null && products[i].productId == productId) {
+                products[i] = null;
+                System.out.println("Product removed from inventory.");
+                return;
+            }
+        }
+        System.out.println("Product not found in inventory.");
+    }
+
+    public void displayInventory() {
+        System.out.println("Product Inventory:");
+        for (int i = 0; i < itemCount; i++) {
+            if (products[i] != null) {
+                products[i].displayProductInfo();
+                System.out.println();
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ProductInventory inventory = new ProductInventory(10);
+
+        Product product1 = new Product(101, "Laptop", 5, 899.99);
+        Product product2 = new Product(102, "Smartphone", 10, 499.99);
+        Product product3 = new Product(103, "Tablet", 3, 299.99);
+
+        inventory.addProduct(product1);
+        inventory.addProduct(product2);
+        inventory.addProduct(product3);
+
+        inventory.displayInventory();
+
+        inventory.removeProduct(102);
+
+        inventory.displayInventory();
+    }
+}
+
+
+
+Exercise 11: Student Enrollment System
+Create a Student class with properties studentId, firstName, lastName, email, and course. Implement a constructor to initialize these properties and a method displayStudentInfo() to display the student's information.
+
+Additionally, create a StudentEnrollment class that maintains a list of enrolled students. It should include methods to:
+
+Enroll a new student.
+Remove a student from the enrollment.
+Display the information of all enrolled students.
+Solution:
+
+java
+Copy code
+class Student {
+    private int studentId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String course;
+
+    public Student(int studentId, String firstName, String lastName, String email, String course) {
+        this.studentId = studentId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.course = course;
+    }
+
+    public void displayStudentInfo() {
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Name: " + firstName + " " + lastName);
+        System.out.println("Email: " + email);
+        System.out.println("Course: " + course);
+    }
+}
+
+class StudentEnrollment {
+    private Student[] students;
+    private int enrollmentCount;
+
+    public StudentEnrollment(int capacity) {
+        students = new Student[capacity];
+        enrollmentCount = 0;
+    }
+
+    public void enrollStudent(Student student) {
+        if (enrollmentCount < students.length) {
+            students[enrollmentCount] = student;
+            enrollmentCount++;
+            System.out.println("Student enrolled successfully.");
+        } else {
+            System.out.println("Enrollment is full. Cannot enroll more students.");
+        }
+    }
+
+    public void removeStudent(int studentId) {
+        for (int i = 0; i < enrollmentCount; i++) {
+            if (students[i] != null && students[i].studentId == studentId) {
+                students[i] = null;
+                System.out.println("Student removed from enrollment.");
+                return;
+            }
+        }
+        System.out.println("Student not found in enrollment.");
+    }
+
+    public void displayEnrollment() {
+        System.out.println("Student Enrollment:");
+        for (int i = 0; i < enrollmentCount; i++) {
+            if (students[i] != null) {
+                students[i].displayStudentInfo();
+                System.out.println();
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        StudentEnrollment enrollment = new StudentEnrollment(10);
+
+        Student student1 = new Student(101, "Alice", "Smith", "alice@example.com", "Computer Science");
+        Student student2 = new Student(102, "Bob", "Johnson", "bob@example.com", "Mathematics");
+        Student student3 = new Student(103, "Charlie", "Davis", "charlie@example.com", "Physics");
+
+        enrollment.enrollStudent(student1);
+        enrollment.enrollStudent(student2);
+        enrollment.enrollStudent(student3);
+
+        enrollment.displayEnrollment();
+
+        enrollment.removeStudent(102);
+
+        enrollment.displayEnrollment();
+    }
+}
+
+
+
+
+Exercise 12: Library Catalog System
+Create a Book class with properties title, author, isbn, and year. Implement a constructor to initialize these properties and a method displayBookInfo() to display the book's information.
+
+Additionally, create a LibraryCatalog class that maintains a catalog of books. It should include methods to:
+
+Add a book to the catalog.
+Remove a book from the catalog.
+Display the information of all books in the catalog.
+Solution:
+
+
+class Book {
+    private String title;
+    private String author;
+    private String isbn;
+    private int year;
+
+    public Book(String title, String author, String isbn, int year) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.year = year;
+    }
+
+    public void displayBookInfo() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Year: " + year);
+    }
+}
+
+class LibraryCatalog {
+    private Book[] books;
+    private int bookCount;
+
+    public LibraryCatalog(int capacity) {
+        books = new Book[capacity];
+        bookCount = 0;
+    }
+
+    public void addBook(Book book) {
+        if (bookCount < books.length) {
+            books[bookCount] = book;
+            bookCount++;
+            System.out.println("Book added to the catalog.");
+        } else {
+            System.out.println("Catalog is full. Cannot add more books.");
+        }
+    }
+
+    public void removeBook(String isbn) {
+        for (int i = 0; i < bookCount; i++) {
+            if (books[i] != null && books[i].isbn.equals(isbn)) {
+                books[i] = null;
+                System.out.println("Book removed from the catalog.");
+                return;
+            }
+        }
+        System.out.println("Book not found in the catalog.");
+    }
+
+    public void displayCatalog() {
+        System.out.println("Library Catalog:");
+        for (int i = 0; i < bookCount; i++) {
+            if (books[i] != null) {
+                books[i].displayBookInfo();
+                System.out.println();
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        LibraryCatalog catalog = new LibraryCatalog(10);
+
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "978-0-7432-7356-5", 1925);
+        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", "978-0-06-112008-4", 1960);
+        Book book3 = new Book("1984", "George Orwell", "978-0-452-28423-4", 1949);
+
+        catalog.addBook(book1);
+        catalog.addBook(book2);
+        catalog.addBook(book3);
+
+        catalog.displayCatalog();
+
+        catalog.removeBook("978-0-006-89603-3");
+
+        catalog.displayCatalog();
+    }
+}

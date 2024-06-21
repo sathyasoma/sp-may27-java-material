@@ -1,0 +1,308 @@
+Exercise 1: Find the Maximum Value in an Array
+
+Write a Java program to find the maximum value in an array of integers.
+
+Solution:
+
+
+public class MaxValueInArray {
+    public static void main(String[] args) {
+        int[] numbers = {3, 7, 2, 8, 6, 4};
+        
+        int max = numbers[0]; // Assume the first element is the maximum
+        
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        
+        System.out.println("The maximum value in the array is: " + max);
+    }
+}
+Exercise 2: Calculate the Average of Array Elements
+
+Write a Java program to calculate the average of elements in an array of integers.
+
+Solution:
+
+
+public class AverageOfArray {
+    public static void main(String[] args) {
+        int[] numbers = {3, 7, 2, 8, 6, 4};
+        
+        int sum = 0;
+        
+        for (int number : numbers) {
+            sum += number;
+        }
+        
+        double average = (double) sum / numbers.length;
+        
+        System.out.println("The average of the array elements is: " + average);
+    }
+}
+Exercise 3: Reverse an Array
+
+Write a Java program to reverse an array of integers in place (without creating a new array).
+
+Solution:
+
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] numbers = {3, 7, 2, 8, 6, 4};
+        
+        int left = 0;
+        int right = numbers.length - 1;
+        
+        while (left < right) {
+            // Swap the elements at left and right indices
+            int temp = numbers[left];
+            numbers[left] = numbers[right];
+            numbers[right] = temp;
+            
+            left++;
+            right--;
+        }
+        
+        System.out.println("Reversed Array:");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+    }
+}
+Exercise 4: Check if an Element Exists in an Array
+
+Write a Java program to check if a specific element exists in an array of integers.
+
+Solution:
+
+
+public class ElementExistsInArray {
+    public static void main(String[] args) {
+        int[] numbers = {3, 7, 2, 8, 6, 4};
+        int target = 8; // Element to search for
+        
+        boolean exists = false;
+        
+        for (int number : numbers) {
+            if (number == target) {
+                exists = true;
+                break;
+            }
+        }
+        
+        if (exists) {
+            System.out.println(target + " exists in the array.");
+        } else {
+            System.out.println(target + " does not exist in the array.");
+        }
+    }
+}
+
+Exercise 5: Find the Sum of All Positive Elements
+
+Write a Java program to find the sum of all positive elements in an array of integers.
+
+Solution:
+
+
+public class SumPositiveElements {
+    public static void main(String[] args) {
+        int[] numbers = {3, -2, 7, -1, 5, -4};
+        
+        int sum = 0;
+        
+        for (int number : numbers) {
+            if (number > 0) {
+                sum += number;
+            }
+        }
+        
+        System.out.println("The sum of positive elements is: " + sum);
+    }
+}
+Exercise 6: Merge Two Arrays
+
+Write a Java program to merge two arrays of integers into a single array.
+
+Solution:
+
+
+public class MergeArrays {
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3};
+        int[] array2 = {4, 5, 6};
+        
+        int length1 = array1.length;
+        int length2 = array2.length;
+        
+        int[] mergedArray = new int[length1 + length2];
+        
+        // Copy elements from array1
+        for (int i = 0; i < length1; i++) {
+            mergedArray[i] = array1[i];
+        }
+        
+        // Copy elements from array2
+        for (int i = 0; i < length2; i++) {
+            mergedArray[length1 + i] = array2[i];
+        }
+        
+        System.out.println("Merged Array:");
+        for (int number : mergedArray) {
+            System.out.print(number + " ");
+        }
+    }
+}
+Exercise 7: Count Occurrences of an Element
+
+Write a Java program to count the occurrences of a specific element in an array of integers.
+
+Solution:
+
+
+public class CountElementOccurrences {
+    public static void main(String[] args) {
+        int[] numbers = {3, 7, 2, 8, 6, 7, 4, 7};
+        int target = 7; // Element to count
+        
+        int count = 0;
+        
+        for (int number : numbers) {
+            if (number == target) {
+                count++;
+            }
+        }
+        
+        System.out.println("The element " + target + " occurs " + count + " times in the array.");
+    }
+}
+Exercise 8: Find the Smallest Element
+
+Write a Java program to find the smallest element in an array of integers.
+
+Solution:
+
+
+public class SmallestElementInArray {
+    public static void main(String[] args) {
+        int[] numbers = {3, 7, 2, 8, 6, 4};
+        
+        int min = numbers[0]; // Assume the first element is the minimum
+        
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+        }
+        
+        System.out.println("The smallest element in the array is: " + min);
+    }
+}
+
+Exercise 9: Check for Palindrome Array
+
+Write a Java program to check if an array of integers is a palindrome, meaning it reads the same forwards and backwards.
+
+Solution:
+
+
+public class PalindromeArray {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 2, 1};
+        boolean isPalindrome = true;
+
+        for (int i = 0; i < numbers.length / 2; i++) {
+            if (numbers[i] != numbers[numbers.length - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            System.out.println("The array is a palindrome.");
+        } else {
+            System.out.println("The array is not a palindrome.");
+        }
+    }
+}
+Exercise 10: Rotate Array to the Right
+
+Write a Java program to rotate the elements of an array to the right by a specified number of positions.
+
+Solution:
+
+
+public class RotateArray {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        int positions = 2; // Number of positions to rotate
+        
+        int length = numbers.length;
+        
+        // Create a temporary array to hold the rotated values
+        int[] rotatedArray = new int[length];
+        
+        for (int i = 0; i < length; i++) {
+            int newPosition = (i + positions) % length;
+            rotatedArray[newPosition] = numbers[i];
+        }
+        
+        System.out.println("Rotated Array:");
+        for (int number : rotatedArray) {
+            System.out.print(number + " ");
+        }
+    }
+}
+Exercise 11: Find Duplicate Elements
+
+Write a Java program to find duplicate elements in an array of integers.
+
+Solution:
+
+
+public class FindDuplicates {
+    public static void main(String[] args) {
+        int[] numbers = {3, 7, 2, 8, 7, 4, 3};
+        
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j]) {
+                    System.out.println("Duplicate found: " + numbers[i]);
+                }
+            }
+        }
+    }
+}
+Exercise 12: Shift Zeroes to the End
+
+Write a Java program to move all zeroes to the end of an array while maintaining the order of non-zero elements.
+
+Solution:
+
+
+public class MoveZeroesToEnd {
+    public static void main(String[] args) {
+        int[] numbers = {0, 2, 0, 4, 0, 6};
+        
+        int nonZeroIndex = 0;
+        
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] != 0) {
+                // Swap non-zero element with the first zero
+                int temp = numbers[i];
+                numbers[i] = numbers[nonZeroIndex];
+                numbers[nonZeroIndex] = temp;
+                
+                nonZeroIndex++;
+            }
+        }
+        
+        System.out.println("Array with zeroes moved to the end:");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+    }
+}

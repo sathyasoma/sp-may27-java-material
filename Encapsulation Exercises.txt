@@ -1,0 +1,343 @@
+Exercise 1: Encapsulation with Getter and Setter
+
+Create a class called Person with private fields name, age, and email. Provide public getter and setter methods for each of these fields.
+
+public class Person {
+    private String name;
+    private int age;
+    private String email;
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter for age
+    public int getAge() {
+        return age;
+    }
+
+    // Setter for age
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            System.out.println("Age cannot be negative.");
+        }
+    }
+
+    // Getter for email
+    public String getEmail() {
+        return email;
+    }
+
+    // Setter for email
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
+Exercise 2: Using Encapsulation
+
+Create a Main class to demonstrate the use of encapsulation by creating an instance of the Person class, setting its fields using the setter methods, and then retrieving and displaying the values using the getter methods.
+
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person();
+
+        // Set the person's attributes using setter methods
+        person.setName("Alice");
+        person.setAge(30);
+        person.setEmail("alice@example.com");
+
+        // Retrieve and display the person's attributes using getter methods
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+        System.out.println("Email: " + person.getEmail());
+    }
+}
+Exercise 3: Encapsulation with Constructors
+
+Modify the Person class to include a constructor that accepts parameters for name, age, and email. Use this constructor to initialize the fields when an object of the Person class is created.
+
+public class Person {
+    private String name;
+    private int age;
+    private String email;
+
+    // Constructor with parameters
+    public Person(String name, int age, String email) {
+        this.name = name;
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            System.out.println("Age cannot be negative.");
+        }
+        this.email = email;
+    }
+
+    // Getter and setter methods (same as in Exercise 1)
+    // ...
+}
+Exercise 4: Using Encapsulation with Constructors
+
+Modify the Main class to create an instance of the Person class using the constructor with parameters and then display the person's attributes.
+
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("Bob", 25, "bob@example.com");
+
+        // Retrieve and display the person's attributes using getter methods
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+        System.out.println("Email: " + person.getEmail());
+    }
+}
+
+Exercise 5: Encapsulation with Validation
+
+Enhance the Person class to include validation in the setter methods. The setAge() method should ensure that the age is within a reasonable range (e.g., between 0 and 120), and the setEmail() method should validate that the email is in a valid format (e.g., contains "@" and "." symbols).
+
+
+public class Person {
+    private String name;
+    private int age;
+    private String email;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0 && age <= 120) {
+            this.age = age;
+        } else {
+            System.out.println("Invalid age. Age must be between 0 and 120.");
+        }
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        if (email.contains("@") && email.contains(".")) {
+            this.email = email;
+        } else {
+            System.out.println("Invalid email format.");
+        }
+    }
+}
+Exercise 6: Using Encapsulation with Validation
+
+Modify the Main class to create an instance of the Person class and set its attributes, including invalid values. Observe that the validation in the setter methods prevents setting invalid values.
+
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person();
+
+        // Setting valid attributes
+        person.setName("Alice");
+        person.setAge(30);
+        person.setEmail("alice@example.com");
+
+        // Setting invalid age
+        person.setAge(-5); // This should print an error message.
+
+        // Setting invalid email format
+        person.setEmail("invalid-email"); // This should print an error message.
+
+        // Displaying the person's attributes
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+        System.out.println("Email: " + person.getEmail());
+    }
+}
+
+Exercise 7: Encapsulation with Aggregation
+
+Create a Course class with private fields for the course name and instructor. Then, create a Student class with private fields for the student's name and an array of courses they are enrolled in. Implement methods to add and remove courses for a student. Ensure proper encapsulation and data validation.
+
+
+import java.util.ArrayList;
+
+class Course {
+    private String courseName;
+    private String instructor;
+
+    public Course(String courseName, String instructor) {
+        this.courseName = courseName;
+        this.instructor = instructor;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+}
+
+class Student {
+    private String studentName;
+    private ArrayList<Course> courses;
+
+    public Student(String studentName) {
+        this.studentName = studentName;
+        this.courses = new ArrayList<>();
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
+
+    public void removeCourse(Course course) {
+        courses.remove(course);
+    }
+
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+}
+Exercise 8: Using Encapsulation with Aggregation
+
+Create a Main class to demonstrate the use of encapsulation with aggregation by creating instances of the Course and Student classes. Enroll a student in multiple courses, display their enrolled courses, and remove a course from their enrollment.
+
+
+public class Main {
+    public static void main(String[] args) {
+        Course mathCourse = new Course("Mathematics", "Professor Smith");
+        Course physicsCourse = new Course("Physics", "Professor Johnson");
+
+        Student student = new Student("Alice");
+
+        // Enroll the student in courses
+        student.addCourse(mathCourse);
+        student.addCourse(physicsCourse);
+
+        // Display the student's enrolled courses
+        System.out.println(student.getStudentName() + "'s enrolled courses:");
+        for (Course course : student.getCourses()) {
+            System.out.println(course.getCourseName() + " (Instructor: " + course.getInstructor() + ")");
+        }
+
+        // Remove a course
+        student.removeCourse(mathCourse);
+
+        // Display the updated list of enrolled courses
+        System.out.println("\nAfter removing a course, " + student.getStudentName() + "'s enrolled courses:");
+        for (Course course : student.getCourses()) {
+            System.out.println(course.getCourseName() + " (Instructor: " + course.getInstructor() + ")");
+        }
+    }
+}
+
+Exercise 9: Encapsulation with Composition
+
+Create a Book class with private fields for the book's title, author, and ISBN. Then, create a Library class with a private list of Book objects representing the library's collection. Implement methods to add and remove books from the library. Ensure proper encapsulation.
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Book {
+    private String title;
+    private String author;
+    private String isbn;
+
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+}
+
+class Library {
+    private List<Book> books;
+
+    public Library() {
+        this.books = new ArrayList<>();
+    }
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
+    public void removeBook(Book book) {
+        books.remove(book);
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+}
+Exercise 10: Using Encapsulation with Composition
+
+Create a Main class to demonstrate the use of encapsulation with composition by creating instances of the Book and Library classes. Add books to the library, display the library's collection, and remove a book from the library.
+
+
+public class Main {
+    public static void main(String[] args) {
+        Book book1 = new Book("Java Programming", "John Smith", "123456789");
+        Book book2 = new Book("Python Programming", "Alice Johnson", "987654321");
+
+        Library library = new Library();
+
+        // Add books to the library
+        library.addBook(book1);
+        library.addBook(book2);
+
+        // Display the library's collection
+        System.out.println("Library's Collection:");
+        for (Book book : library.getBooks()) {
+            System.out.println("Title: " + book.getTitle());
+            System.out.println("Author: " + book.getAuthor());
+            System.out.println("ISBN: " + book.getIsbn());
+            System.out.println();
+        }
+
+        // Remove a book from the library
+        library.removeBook(book1);
+
+        // Display the updated library collection
+        System.out.println("\nAfter removing a book, Library's Collection:");
+        for (Book book : library.getBooks()) {
+            System.out.println("Title: " + book.getTitle());
+            System.out.println("Author: " + book.getAuthor());
+            System.out.println("ISBN: " + book.getIsbn());
+            System.out.println();
+        }
+    }
+}

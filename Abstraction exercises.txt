@@ -1,0 +1,626 @@
+Exercise 1: Create an Abstract Class
+
+Create an abstract class called Shape with an abstract method calculateArea(). Then, create two subclasses, Circle and Rectangle, that extend the Shape class and implement the calculateArea() method to calculate the area of a circle and a rectangle, respectively.
+
+
+// Step 1: Create an abstract class Shape
+abstract class Shape {
+    abstract double calculateArea();
+}
+
+// Step 2: Create a Circle class that extends Shape
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Step 3: Create a Rectangle class that extends Shape
+class Rectangle extends Shape {
+    double length;
+    double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double calculateArea() {
+        return length * width;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5.0);
+        Rectangle rectangle = new Rectangle(4.0, 6.0);
+
+        System.out.println("Area of Circle: " + circle.calculateArea());
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+    }
+}
+Exercise 2: Create an Interface
+
+Create an interface called Drawable with an abstract method draw(). Then, create two classes, Circle and Rectangle, that implement the Drawable interface and provide their own draw() method implementations.
+
+
+// Step 1: Create an interface Drawable
+interface Drawable {
+    void draw();
+}
+
+// Step 2: Create a Circle class that implements Drawable
+class Circle implements Drawable {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle with radius " + radius);
+    }
+}
+
+// Step 3: Create a Rectangle class that implements Drawable
+class Rectangle implements Drawable {
+    double length;
+    double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle with length " + length + " and width " + width);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5.0);
+        Rectangle rectangle = new Rectangle(4.0, 6.0);
+
+        circle.draw();
+        rectangle.draw();
+    }
+}
+
+Exercise 3: Abstract Class with Fields
+
+Create an abstract class called Animal with two fields: name and sound. Add a constructor to initialize these fields. Create two subclasses, Dog and Cat, that extend the Animal class and provide their own implementations for the makeSound() method.
+
+
+// Step 1: Create an abstract class Animal
+abstract class Animal {
+    String name;
+    String sound;
+
+    Animal(String name, String sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+
+    abstract void makeSound();
+}
+
+// Step 2: Create a Dog class that extends Animal
+class Dog extends Animal {
+    Dog(String name) {
+        super(name, "Woof");
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " says " + sound);
+    }
+}
+
+// Step 3: Create a Cat class that extends Animal
+class Cat extends Animal {
+    Cat(String name) {
+        super(name, "Meow");
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " says " + sound);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy");
+        Cat cat = new Cat("Whiskers");
+
+        dog.makeSound();
+        cat.makeSound();
+    }
+}
+Exercise 4: Interface with Constants
+
+Create an interface called Shape with two constant fields: PI and E. Implement this interface in a class called Circle and use the constants to calculate the circumference and area of a circle.
+
+
+// Step 1: Create an interface Shape with constants
+interface Shape {
+    double PI = 3.14159265359;
+    double E = 2.71828;
+}
+
+// Step 2: Create a Circle class that implements Shape
+class Circle implements Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    double calculateCircumference() {
+        return 2 * PI * radius;
+    }
+
+    double calculateArea() {
+        return PI * radius * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5.0);
+
+        System.out.println("Circumference of the circle: " + circle.calculateCircumference());
+        System.out.println("Area of the circle: " + circle.calculateArea());
+    }
+}
+
+Exercise 5: Abstract Class with Template Method
+
+Create an abstract class Meal with a template method prepareMeal(). The prepareMeal() method defines the high-level steps for preparing a meal, such as cooking, plating, and serving. Create two concrete subclasses, Breakfast and Lunch, that extend the Meal class and implement their own versions of prepareMeal().
+
+
+// Step 1: Create an abstract class Meal
+abstract class Meal {
+    // Template method
+    public void prepareMeal() {
+        cook();
+        plate();
+        serve();
+    }
+
+    abstract void cook();
+
+    abstract void plate();
+
+    abstract void serve();
+}
+
+// Step 2: Create a Breakfast class that extends Meal
+class Breakfast extends Meal {
+    @Override
+    void cook() {
+        System.out.println("Cooking breakfast...");
+    }
+
+    @Override
+    void plate() {
+        System.out.println("Plating breakfast...");
+    }
+
+    @Override
+    void serve() {
+        System.out.println("Serving breakfast...");
+    }
+}
+
+// Step 3: Create a Lunch class that extends Meal
+class Lunch extends Meal {
+    @Override
+    void cook() {
+        System.out.println("Cooking lunch...");
+    }
+
+    @Override
+    void plate() {
+        System.out.println("Plating lunch...");
+    }
+
+    @Override
+    void serve() {
+        System.out.println("Serving lunch...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Meal breakfast = new Breakfast();
+        Meal lunch = new Lunch();
+
+        System.out.println("Preparing Breakfast:");
+        breakfast.prepareMeal();
+
+        System.out.println("\nPreparing Lunch:");
+        lunch.prepareMeal();
+    }
+}
+Exercise 6: Interface with Default Methods
+
+Create an interface Vehicle with two abstract methods, start() and stop(). Add a default method honk() to the interface. Implement this interface in two classes, Car and Motorcycle, providing their own implementations for start() and stop(). Call the honk() method on instances of both classes.
+
+
+// Step 1: Create an interface Vehicle
+interface Vehicle {
+    void start();
+    void stop();
+    
+    default void honk() {
+        System.out.println("Honking the horn!");
+    }
+}
+
+// Step 2: Create a Car class that implements Vehicle
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Starting the car...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stopping the car...");
+    }
+}
+
+// Step 3: Create a Motorcycle class that implements Vehicle
+class Motorcycle implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Starting the motorcycle...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stopping the motorcycle...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle car = new Car();
+        Vehicle motorcycle = new Motorcycle();
+
+        car.start();
+        car.stop();
+        car.honk();
+
+        motorcycle.start();
+        motorcycle.stop();
+        motorcycle.honk();
+    }
+}
+
+Exercise 7: Abstract Class with Constructors
+
+Create an abstract class Vehicle with fields make and model. Add a constructor to initialize these fields. Create two subclasses, Car and Motorcycle, that extend the Vehicle class and provide their own constructors. Display the make and model of instances of both subclasses.
+
+
+// Step 1: Create an abstract class Vehicle
+abstract class Vehicle {
+    String make;
+    String model;
+
+    Vehicle(String make, String model) {
+        this.make = make;
+        this.model = model;
+    }
+}
+
+// Step 2: Create a Car class that extends Vehicle
+class Car extends Vehicle {
+    Car(String make, String model) {
+        super(make, model);
+    }
+}
+
+// Step 3: Create a Motorcycle class that extends Vehicle
+class Motorcycle extends Vehicle {
+    Motorcycle(String make, String model) {
+        super(make, model);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", "Camry");
+        Motorcycle motorcycle = new Motorcycle("Honda", "CBR");
+
+        System.out.println("Car Make: " + car.make + ", Model: " + car.model);
+        System.out.println("Motorcycle Make: " + motorcycle.make + ", Model: " + motorcycle.model);
+    }
+}
+Exercise 8: Interface with Static Method
+
+Create an interface MathOperations with an abstract method calculate(int a, int b) for performing a mathematical operation. Add a static method square(int a) to the interface to calculate the square of a number. Implement this interface in a class Calculator and provide an implementation for the calculate() method. Use the static square() method to calculate the square of a number.
+
+
+// Step 1: Create an interface MathOperations
+interface MathOperations {
+    int calculate(int a, int b);
+
+    static int square(int a) {
+        return a * a;
+    }
+}
+
+// Step 2: Create a Calculator class that implements MathOperations
+class Calculator implements MathOperations {
+    @Override
+    public int calculate(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.calculate(5, 3);
+        System.out.println("5 + 3 = " + result);
+
+        int squareResult = MathOperations.square(4);
+        System.out.println("Square of 4 = " + squareResult);
+    }
+}
+
+Exercise 9: Interface with Multiple Implementations
+
+Create an interface Shape with abstract methods calculateArea() and calculatePerimeter(). Implement this interface in three classes: Circle, Rectangle, and Triangle. Each class should provide its own implementations for the methods. Calculate and display the area and perimeter of instances of these shapes.
+
+
+// Step 1: Create an interface Shape
+interface Shape {
+    double calculateArea();
+    double calculatePerimeter();
+}
+
+// Step 2: Create a Circle class that implements Shape
+class Circle implements Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Step 3: Create a Rectangle class that implements Shape
+class Rectangle implements Shape {
+    double length;
+    double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+// Step 4: Create a Triangle class that implements Shape
+class Triangle implements Shape {
+    double side1;
+    double side2;
+    double side3;
+
+    Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    @Override
+    public double calculateArea() {
+        double s = (side1 + side2 + side3) / 2;
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5.0);
+        Rectangle rectangle = new Rectangle(4.0, 6.0);
+        Triangle triangle = new Triangle(3.0, 4.0, 5.0);
+
+        System.out.println("Circle - Area: " + circle.calculateArea() + ", Perimeter: " + circle.calculatePerimeter());
+        System.out.println("Rectangle - Area: " + rectangle.calculateArea() + ", Perimeter: " + rectangle.calculatePerimeter());
+        System.out.println("Triangle - Area: " + triangle.calculateArea() + ", Perimeter: " + triangle.calculatePerimeter());
+    }
+}
+Exercise 10: Abstract Class with Inheritance
+
+Create an abstract class Employee with fields name and salary, and an abstract method calculateBonus(). Create two subclasses, Manager and Developer, that extend the Employee class and provide their own implementations for the calculateBonus() method. Calculate and display the bonus for instances of both subclasses.
+
+
+// Step 1: Create an abstract class Employee
+abstract class Employee {
+    String name;
+    double salary;
+
+    Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    abstract double calculateBonus();
+}
+
+// Step 2: Create a Manager class that extends Employee
+class Manager extends Employee {
+    Manager(String name, double salary) {
+        super(name, salary);
+    }
+
+    @Override
+    double calculateBonus() {
+        return 0.2 * salary; // 20% of salary as bonus for managers
+    }
+}
+
+// Step 3: Create a Developer class that extends Employee
+class Developer extends Employee {
+    Developer(String name, double salary) {
+        super(name, salary);
+    }
+
+    @Override
+    double calculateBonus() {
+        return 0.1 * salary; // 10% of salary as bonus for developers
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Manager manager = new Manager("John", 50000);
+        Developer developer = new Developer("Alice", 60000);
+
+        System.out.println(manager.name + "'s Bonus: $" + manager.calculateBonus());
+        System.out.println(developer.name + "'s Bonus: $" + developer.calculateBonus());
+    }
+}
+
+Exercise 11: Abstract Class with Polymorphism
+
+Create an abstract class Shape with an abstract method calculateArea(). Then, create three subclasses: Circle, Rectangle, and Triangle, each extending the Shape class. Implement the calculateArea() method in each subclass to calculate the area of their respective shapes. Create an array of Shape objects containing instances of these subclasses and calculate and display the area of each shape using polymorphism.
+
+
+// Step 1: Create an abstract class Shape
+abstract class Shape {
+    abstract double calculateArea();
+}
+
+// Step 2: Create a Circle class that extends Shape
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Step 3: Create a Rectangle class that extends Shape
+class Rectangle extends Shape {
+    double length;
+    double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double calculateArea() {
+        return length * width;
+    }
+}
+
+// Step 4: Create a Triangle class that extends Shape
+class Triangle extends Shape {
+    double base;
+    double height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    double calculateArea() {
+        return 0.5 * base * height;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape[] shapes = new Shape[3];
+        shapes[0] = new Circle(5.0);
+        shapes[1] = new Rectangle(4.0, 6.0);
+        shapes[2] = new Triangle(3.0, 4.0);
+
+        for (Shape shape : shapes) {
+            System.out.println("Area: " + shape.calculateArea());
+        }
+    }
+}
+Exercise 12: Interface with Multiple Inheritance
+
+Create two interfaces, Flyable and Swimmable, with abstract methods fly() and swim(), respectively. Implement both interfaces in a class called Duck that provides implementations for both fly() and swim(). Create an instance of the Duck class and demonstrate its ability to both fly and swim.
+
+
+// Step 1: Create an interface Flyable
+interface Flyable {
+    void fly();
+}
+
+// Step 2: Create an interface Swimmable
+interface Swimmable {
+    void swim();
+}
+
+// Step 3: Create a Duck class that implements both Flyable and Swimmable
+class Duck implements Flyable, Swimmable {
+    @Override
+    public void fly() {
+        System.out.println("Duck is flying.");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Duck is swimming.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Duck duck = new Duck();
+        duck.fly();
+        duck.swim();
+    }
+}

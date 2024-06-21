@@ -1,0 +1,140 @@
+Exercise 1: Calculate the area of a circle.
+Write a Java program that calculates the area of a
+ circle using the formula area = π * radius * radius. 
+ Define the radius as a double variable and assume π is 3.14159.
+
+
+public class CircleArea {
+    public static void main(String[] args) {
+        double radius = 5.0; // You can change the radius value
+        double pi = 3.14159;
+        double area = pi * radius * radius;
+
+        System.out.println("The area of the circle is: " + area);
+    }
+}
+
+Exercise 2: Calculate the sum of two integers.
+Write a Java program that calculates the sum of two integers. 
+Declare two integer variables and assign values to them.
+
+
+public class SumOfIntegers {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 20;
+        int sum = num1 + num2;
+
+        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
+    }
+}
+
+
+Exercise 3: Calculate the average of three floating-point numbers.
+Write a Java program that calculates the average of three floating-point numbers 
+(e.g., 2.5, 3.0, 4.5). Declare three double variables and calculate their average.
+
+
+public class AverageOfDoubles {
+    public static void main(String[] args) {
+        double num1 = 2.5;
+        double num2 = 3.0;
+        double num3 = 4.5;
+        double average = (num1 + num2 + num3) / 3.0;
+
+        System.out.println("The average of " + num1 + ", " + num2 + ", and " + num3 + " is: " + average);
+    }
+}
+
+Exercise 4: Concatenate two strings.
+Write a Java program that concatenates two strings and displays the result. Declare two String variables and assign values to them.
+
+
+public class StringConcatenation {
+    public static void main(String[] args) {
+        String str1 = "Hello, ";
+        String str2 = "world!";
+        String result = str1 + str2;
+
+        System.out.println("Concatenated String: " + result);
+    }
+}
+
+
+Exercise 5: Calculate the area of a rectangle.
+Write a Java program that calculates the area of a rectangle using the formula area = length * width. Declare two double variables for length and width, and calculate the area.
+
+
+public class RectangleArea {
+    public static void main(String[] args) {
+        double length = 7.5;
+        double width = 4.0;
+        double area = length * width;
+
+        System.out.println("The area of the rectangle is: " + area);
+    }
+}
+
+Exercise 6: Calculate the total cost.
+Write a Java program that calculates the total cost of an item based on its price and quantity. Declare a double variable for the price and an int variable for the quantity, then calculate and display the total cost.
+
+
+public class TotalCost {
+    public static void main(String[] args) {
+        double price = 12.99;
+        int quantity = 5;
+        double totalCost = price * quantity;
+
+        System.out.println("The total cost is: $" + totalCost);
+    }
+}
+
+Exercise 7: Perform arithmetic operations.
+Write a Java program that performs various arithmetic operations
+ (addition, subtraction, multiplication, division) on two numbers. 
+ Declare two int variables and perform these operations.
+
+
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 5;
+
+        int sum = num1 + num2;
+        int difference = num1 - num2;
+        int product = num1 * num2;
+        int quotient = num1 / num2;
+
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+        System.out.println("Quotient: " + quotient);
+    }
+}
+Exercise 8: Check boolean conditions.
+Write a Java program that checks boolean conditions and prints the results. 
+Declare boolean variables and use them in conditional statements.
+
+
+public class BooleanConditions {
+    public static void main(String[] args) {
+        boolean isJavaFun = true;
+        boolean isCodingEasy = false;
+
+        if (isJavaFun) {
+            System.out.println("Java is fun!");
+        } else {
+            System.out.println("Java is not fun.");
+        }
+
+        if (isCodingEasy) {
+            System.out.println("Coding is easy.");
+        } else {
+            System.out.println("Coding is challenging.");
+        }
+    }
+}
+These exercises cover a variety of data types, including double, int, and boolean, and they involve basic arithmetic operations and conditional statements. Practice these exercises to strengthen your understanding of Java datatypes and basic programming concepts.
+
+
+
